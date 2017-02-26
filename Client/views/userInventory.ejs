@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory | E-BAY</title>
+    <link href="css/main.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+
+    <script src="angularjs/register.js"></script>
+</head>
+<body ng-app="register" ng-controller="register">
+
+<header id="header">
+    <div class="header_top">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-10">
+                    <div class="shop-menu pull-left">
+
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown"><a>Hi <span class="uspan"><%=username%>! </span>&nbsp;&nbsp;<i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                                <ul role="menu" class="sub-menu">
+                                    <li><img src="images/displaypic.jpg" class="pull-left" alt="" width="50" height="50"  /><a ng-click="profile();">My Profile</a></li>
+                                    <li><a ng-click="getMyColletion();">My Inventory</a></li>
+                                    <li><a ng-click="getMyBoughtItems();">Purchase History</a></li>
+
+                                    <li ><form action="logout" method="post">
+                                            <input type="submit" value="Logout"  class="btn btn-primary"/>
+                                        </form></li>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a>|&nbsp;&nbsp;&nbsp; Last Logged In: <%=lastLoggedIn%></a></li>
+                            <li ng-click="shopitems();"><a>|&nbsp;&nbsp;&nbsp; Daily Deals</a></li>
+                            <li ng-click="addPost();"><a>|&nbsp;&nbsp;&nbsp; Sell</a></li>
+                            <li><a><img src="images/halloween.jpg" class="pull-left" alt="" width="120" height="25"  /></a></li>
+
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <li class="pull-right" ng-click="getCart();"><a><img src="images/cart.png" alt="" width="30" height="25"  /></a></li>
+                    <li class="pull-right" ng-click="getCart();"><a>Your Cart</a></li>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="mainmenu pull-left">
+                        <table>
+                            <tr>
+                                <td>
+                                    <a><img ng-click="homepage();" src="images/ebay.png" class="pull-left" alt="" width="120" height="100"  /></a>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <input type="text" placeholder="Search..." class="searchtext"/>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <button type="button" ng-click="shopitems();" class="btn btn-primary">Search</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<h1 align="left" style="color: #423e3ecc; padding-left: 70px">My eBay: Items to Sell</h1></br></br>
+<section id="do_action">
+    <div class="container" >
+          <div class="row" >
+            <div class="col-sm-12">
+                <div class="total_area">
+                     <ul>
+                        <table class="table table-condensed">
+                            <thead>
+                            <tr class="cart_menu">
+                                <td class="image"><h3 class="title1">Item Details</h3></td>
+                                <td class="total"><h3 class="title1"></h3></td>
+                                <td class="price"><h3 class="title1">Price</h3></td>
+                                <td class="total"><h3 class="title1">Quantity Left</h3></td>
+                            </tr>
+                            </thead>
+                            <div class="form-group ">
+                                    <strong style="color:#5bb99f;align-content: center;font-size: 50px"><%=message%></strong>
+                            </div>
+                            <tbody>
+                            <% for(var i in data)
+                            {
+                            %>
+                            <form action="deleteFromCart" method="post" >
+                                <tr>
+                                    <td class="cart_description">
+                                        <img src="images/<%= data[i].image %>" alt="" width="150" height="130"  />
+                                    </td>
+                                    <td class="cart_description">
+                                        <h4><a><%= data[i].itemname %></a></h4>
+                                        <h4><a><%= data[i].itemdesc %></a></h4>
+                                    </td>
+                                    <td class="cart_description">
+                                        <h4><a>$ <%= data[i].price %></a></h4>
+                                    </td>
+                                    <td class="cart_description">
+                                        <h4><a><%= data[i].quantity %></a></h4>
+
+                                    </td>
+
+                                </tr>
+                            </form>
+                            <%
+                            }
+                            %>
+                            </tbody>
+                            </table>
+                        </ul>
+
+
+                </div>
+            </div>
+</div>
+    </div>
+</section><!--/#do_action-->
+
+
+
+</body>
+</html>

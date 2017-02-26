@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>User Profile | E-BAY</title>
+	<link href="/css/main.css" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	<link
+			href="http://ir.ebaystatic.com/rs/v/dsi1xbgsnq4ktjrl1wa4bo0dky5.css"
+			type="text/css" rel="stylesheet">
+
+	<link rel="canonical" href="http://www.ebay.com/usr/shrutloy_0"
+		  hreflang="" />
+
+	<script src="angularjs/register.js"></script>
+</head><!--/head-->
+
+<body ng-app="register" ng-controller="register">
+
+<header id="header">
+	<div class="header_top">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-sm-10">
+					<div class="shop-menu pull-left">
+
+						<ul class="nav navbar-nav">
+							<li class="dropdown"><a>Hi <span class="uspan"><%=username%>! </span>&nbsp;&nbsp;<i class="glyphicon glyphicon-triangle-bottom"></i></a>
+								<ul role="menu" class="sub-menu">
+									<li><img src="images/displaypic.jpg" class="pull-left" alt="" width="50" height="50"  /><a ng-click="profile();">My Profile</a></li>
+									<li class="dropdown"><a>My Collection</a>
+										<ul role="menu" class="sub-menu">
+											<li><a ng-click="getMyColletion();">My Inventory</a></li>
+											<li><a ng-click="getMyBoughtItems();">Bought Items</a></li>
+										</ul>
+									<li ><form action="logout" method="post">
+											<input type="submit" value="Logout"  class="btn btn-primary"/>
+										</form></li>
+									</li>
+								</ul>
+							</li>
+							<li><a>|&nbsp;&nbsp;&nbsp; Last Logged In: <%=lastLoggedIn%></a></li>
+							<li ng-click="shopitems();"><a>|&nbsp;&nbsp;&nbsp; Daily Deals</a></li>
+							<li ng-click="addPost();"><a>|&nbsp;&nbsp;&nbsp; Sell</a></li>
+							<li><a><img src="images/halloween.jpg" class="pull-left" alt="" width="120" height="25"  /></a></li>
+
+						</ul>
+
+					</div>
+				</div>
+				<div class="col-sm-2">
+					<li class="pull-right" ng-click="getCart();"><a><img src="images/cart.png" alt="" width="30" height="25"  /></a></li>
+					<li class="pull-right" ng-click="getCart();"><a>Your Cart</a></li>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="mainmenu pull-left">
+						<table>
+							<tr>
+								<td>
+									<a><img ng-click="homepage();" src="images/ebay.png" class="pull-left" alt="" width="120" height="100"  /></a>
+								</td>
+								<td></td>
+								<td>
+									<input type="text" placeholder="Search..." class="searchtext"/>
+								</td>
+								<td></td>
+								<td>
+									<button type="button" ng-click="shopitems();" class="btn btn-primary">Search</button>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<header>
+	<div class="gcbd page-container">
+		<div id='mainContent' role='main' tabindex='-1'></div>
+		<div id="cover_image" class="cvrimg media sz1200" sectionId="1000">
+			<a class="btn btn-ter btn-s add edit_btn upld" href="javascript:;"
+			   title="Add cover"><span>Add cover</span><span
+						class="icons edit_icn pen noUpld"></span>
+				<form enctype="multipart/form-data" name="eps_upload"
+					  action="/usr/shrutloy_0/edit/uploadpic" target="msa_frame"
+					  class="eps_upload" method="post">
+					<input class="imgbin" sectionId="1000" name="imgbin" type="file"
+						   onchange="" accept="image/*" size="1" />
+				</form></a>
+
+			<div id="cover_wrapper">
+				<img id="cover_handler" class="cov_img img"
+					 src="images/cover.jpg"
+					 data-src="http://p.ebaystatic.com/aw/social/profile_coverimg_wood.jpg"
+					 style="top: 0px;" alt="cover image" />
+			</div>
+
+
+
+
+		</div>
+		<div starty="0px" userLoggedIn="true" id="dummy_cover_img"
+			 src="images/cover.jpg"></div>
+		<div id="index_card" class="sz1200 idx_crd no_feedback">
+			<div class="shad"></div>
+			<div id="user_image" class="usrimg media" sectionId="998">
+					<div class="icon">
+
+					<a class="icons edit_icn pen noUpld" href="javascript:;" title="Edit"></a><span class="cll">
+						<img class="prof_img img" src="images/myPic1.jpg" height="300px" alt="shrutloy_0" /></span>
+				</div>
+
+			</div>
+			<div id="user_info" class="usrinfo">
+				<div class="mbg">
+						<input type="file" name="pic" accept="image/*" text="Upload">
+
+					<a class="mbg-id"><h1><%=username%></h1><h2><input type="text" placeholder="BIO...."/></h2>
+					</a></div>
+
+			</div>
+
+			</div>
+		</div>
+
+</header>
+</br><section id="form"><!--form-->
+	<div class="container">
+		<div class="row">
+
+			<div class="col-sm-8">
+				<div class="login-form"><!--sign up form-->
+					<form action="afterProfileRegister" method="post" class="form-horizontal" role="form" >
+						<div class="form-group ">
+							<h2 class="col-sm-3 ">EBAY NAME:</h2>
+							<div class="col-sm-8 required-field">
+								<input type="text" name="handle" placeholder="Enter your Nick name" value="<%=userhandle%>" required/>
+							</div>
+						</div>
+						<div class="form-group">
+							<h2 class="col-sm-3 ">BIRTHDATE:</h2>
+							<div class="col-sm-8 required-field">
+								<input type="date" name="birthdate" id="inputBirthdate"  placeholder="Enter your Birthdate in YYYY/DD/MM" value="<%=userbirthdate%>" required/>
+							</div>
+						</div>
+						<div class="form-group">
+							<h2 class="col-sm-3 ">CONTACT NO:</h2>
+							<div class="col-sm-8 required-field">
+								<input type="text" pattern="[0-9.]+" title="Please enter valid number" name="contact" id="inputcontact" placeholder="Enter your Contact number" value="<%=userphone%>" required/>
+							</div>
+						</div>
+						<div class="form-group">
+							<h2 class="col-sm-3 ">ADDRESS:</h2>
+							<div class="col-sm-8 required-field">
+								<input type="text" name="address" id="inputaddress" placeholder="Enter your Address" value="<%=useraddress%>" required/>
+							</div>
+						</div>
+						<div class="form-group"align="center">
+						<button type="submit" class="btn btn-primary" ><%=buttonname%></button>
+							</div>
+					</form>
+				</div><!--/sign up form-->
+			</div>
+		</div>
+	</div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://test" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://test" xmlns:intf="http://test" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://test" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="savepost">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="itemname" type="xsd:string"/>
+      <element name="itemdesc" type="xsd:string"/>
+      <element name="sellerinfo" type="xsd:string"/>
+      <element name="price" type="xsd:string"/>
+      <element name="quantity" type="xsd:string"/>
+      <element name="isBid" type="xsd:string"/>
+      <element name="image" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="savepostResponse">
+    <complexType>
+     <sequence>
+      <element name="savepostReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="savepostRequest">
+
+      <wsdl:part element="impl:savepost" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="savepostResponse">
+
+      <wsdl:part element="impl:savepostResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="savePost">
+
+      <wsdl:operation name="savepost">
+
+         <wsdl:input message="impl:savepostRequest" name="savepostRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:savepostResponse" name="savepostResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="savePostSoapBinding" type="impl:savePost">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="savepost">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="savepostRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="savepostResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="savePostService">
+
+      <wsdl:port binding="impl:savePostSoapBinding" name="savePost">
+
+         <wsdlsoap:address location="http://localhost:8080/testebay/services/savePost"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

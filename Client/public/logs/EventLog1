@@ -1,0 +1,170 @@
+DATE, TIME ,USER ID, CLicked Object ID,Description
+
+12/5/2016, 10:10:20 PM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/5/2016, 10:56:53 PM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/5/2016, 10:57:53 PM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/5/2016, 12:01:15 PM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/5/2016, 12:01:21 PM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/5/2016, 12:01:22 PM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/5/2016, 12:05:12 PM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/5/2016, 12:05:13 PM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/5/2016, 12:05:16 PM, shrutiloya1@gmail.com, userProfile, USER PROFILE
+12/5/2016, 12:10:12 PM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/5/2016, 12:10:12 PM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/5/2016, 12:10:14 PM, shrutiloya1@gmail.com, userProfile, USER PROFILE
+12/5/2016, 12:10:19 PM, shrutiloya1@gmail.com, createAD, To Sell any product
+12/5/2016, 12:10:21 PM, shrutiloya1@gmail.com, myCollection, Getting Details of the Users Own Posts
+12/5/2016, 12:10:24 PM, shrutiloya1@gmail.com, boughtItems, Getting details of the User's Bought items
+12/5/2016, 12:31:44 PM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/5/2016, 12:31:55 PM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/5/2016, 12:32:00 PM, shrutiloya1@gmail.com, addToCart, Adding the item to the Cart
+12/5/2016, 12:32:06 PM, shrutiloya1@gmail.com, userProfile, USER PROFILE
+12/6/2016, 12:35:45 AM, timcook@apple.com, home, HOMEPAGE
+12/6/2016, 12:36:58 AM, timcook@apple.com, userProfile, USER PROFILE
+12/6/2016, 12:37:22 AM, timcook@apple.com, userProfile, USER PROFILE
+12/6/2016, 12:38:09 AM, timcook@apple.com, userProfile, USER PROFILE
+12/6/2016, 12:40:05 AM, timcook@apple.com, userProfile, USER PROFILE
+12/6/2016, 12:40:45 AM, timcook@apple.com, updateUserProfile, UPDATING PROFILE DETAILS
+12/6/2016, 12:40:45 AM, timcook@apple.com, home, HOMEPAGE
+12/6/2016, 12:40:47 AM, timcook@apple.com, userProfile, USER PROFILE
+12/6/2016, 12:42:01 AM, timcook@apple.com, home, HOMEPAGE
+12/6/2016, 12:42:57 AM, timcook@apple.com, myCollection, Getting Details of the Users Own Posts
+12/6/2016, 12:43:00 AM, timcook@apple.com, boughtItems, Getting details of the User's Bought items
+12/6/2016, 12:43:13 AM, timcook@apple.com, myCollection, Getting Details of the Users Own Posts
+12/6/2016, 12:43:15 AM, timcook@apple.com, boughtItems, Getting details of the User's Bought items
+12/6/2016, 12:43:21 AM, timcook@apple.com, home, HOMEPAGE
+12/6/2016, 12:43:23 AM, timcook@apple.com, shop, Opening the Shopping Main Page
+12/6/2016, 12:44:04 AM, timcook@apple.com, home, HOMEPAGE
+12/6/2016, 12:44:04 AM, timcook@apple.com, shop, Opening the Shopping Main Page
+12/6/2016, 12:44:59 AM, timcook@apple.com, bid, Making a Bid for the Item
+12/6/2016, 12:45:04 AM, timcook@apple.com, shop, Opening the Shopping Main Page
+12/6/2016, 12:45:05 AM, timcook@apple.com, bid, Making a Bid for the Item
+12/6/2016, 12:45:39 AM, timcook@apple.com, bid, Making a Bid for the Item
+12/6/2016, 12:45:51 AM, timcook@apple.com, bid, Making a Bid for the Item
+12/6/2016, 12:47:12 AM, timcook@apple.com, shop, Opening the Shopping Main Page
+12/6/2016, 12:47:27 AM, timcook@apple.com, addToCart, Adding the item to the Cart
+12/6/2016, 12:47:30 AM, timcook@apple.com, addToCart, Adding the item to the Cart
+12/6/2016, 12:47:32 AM, timcook@apple.com, addToCart, Adding the item to the Cart
+12/6/2016, 12:47:35 AM, timcook@apple.com, addToCart, Adding the item to the Cart
+12/6/2016, 12:47:43 AM, timcook@apple.com, getCart, Displaying the User Cart
+12/6/2016, 12:48:27 AM, timcook@apple.com, deleteFromCart, Deleting the item from the Cart
+12/6/2016, 12:48:47 AM, timcook@apple.com, checkOut, Proceeding with the CheckOut
+12/6/2016, 12:49:25 AM, timcook@apple.com, buy, Final payment
+12/6/2016, 12:50:02 AM, timcook@apple.com, buy, Final payment
+12/6/2016, 12:51:01 AM, timcook@apple.com, buy, Final payment
+12/6/2016, 12:51:01 AM, timcook@apple.com, home, HOMEPAGE
+12/6/2016, 12:51:05 AM, timcook@apple.com, myCollection, Getting Details of the Users Own Posts
+12/6/2016, 12:51:08 AM, timcook@apple.com, boughtItems, Getting details of the User's Bought items
+12/6/2016, 12:51:25 AM, timcook@apple.com, createAD, To Sell any product
+12/6/2016, 12:52:54 AM, timcook@apple.com, postAD, Posting the advertisement
+12/6/2016, 12:52:58 AM, timcook@apple.com, myCollection, Getting Details of the Users Own Posts
+12/6/2016, 12:58:33 AM, timcook@apple.com, home, HOMEPAGE
+12/6/2016, 12:58:33 AM, timcook@apple.com, shop, Opening the Shopping Main Page
+12/6/2016, 12:58:36 AM, timcook@apple.com, bid, Making a Bid for the Item
+12/6/2016, 12:59:48 AM, timcook@apple.com, shop, Opening the Shopping Main Page
+12/6/2016, 1:08:58 AM, timcook@apple.com, userProfile, USER PROFILE
+12/6/2016, 1:12:56 AM, timcook@apple.com, userProfile, USER PROFILE
+12/6/2016, 1:14:12 AM, timcook@apple.com, userProfile, USER PROFILE
+12/6/2016, 1:14:51 AM, timcook@apple.com, userProfile, USER PROFILE
+12/6/2016, 1:16:47 AM, timcook@apple.com, home, HOMEPAGE
+12/6/2016, 1:16:48 AM, timcook@apple.com, shop, Opening the Shopping Main Page
+12/6/2016, 1:16:52 AM, timcook@apple.com, bid, Making a Bid for the Item
+12/6/2016, 1:20:57 AM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/6/2016, 1:24:08 AM, shrutiloya1@gmail.com, userProfile, USER PROFILE
+12/6/2016, 1:24:17 AM, shrutiloya1@gmail.com, userProfile, USER PROFILE
+12/6/2016, 1:24:26 AM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/6/2016, 1:24:26 AM, shrutiloya1@gmail.com, updateUserProfile, UPDATING PROFILE DETAILS
+12/6/2016, 1:24:29 AM, shrutiloya1@gmail.com, userProfile, USER PROFILE
+12/6/2016, 1:24:52 AM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/6/2016, 1:24:55 AM, shrutiloya1@gmail.com, userProfile, USER PROFILE
+12/6/2016, 1:27:55 AM, timcook@apple.com, home, HOMEPAGE
+12/6/2016, 1:28:05 AM, timcook@apple.com, userProfile, USER PROFILE
+12/6/2016, 1:28:22 AM, timcook@apple.com, userProfile, USER PROFILE
+12/6/2016, 1:42:34 AM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/6/2016, 2:04:22 AM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/6/2016, 2:04:26 AM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/6/2016, 2:14:02 AM, timcook@apple.com1, home, HOMEPAGE
+12/6/2016, 2:14:05 AM, timcook@apple.com1, userProfile, USER PROFILE
+12/6/2016, 2:14:43 AM, timcook@apple.com1, userProfile, USER PROFILE
+12/6/2016, 2:14:51 AM, timcook@apple.com1, userProfile, USER PROFILE
+12/6/2016, 2:30:45 AM, timcook@apple.com1, home, HOMEPAGE
+12/6/2016, 2:30:46 AM, timcook@apple.com1, shop, Opening the Shopping Main Page
+12/6/2016, 2:30:53 AM, timcook@apple.com1, addToCart, Adding the item to the Cart
+12/6/2016, 2:30:55 AM, timcook@apple.com1, addToCart, Adding the item to the Cart
+12/6/2016, 2:30:59 AM, timcook@apple.com1, addToCart, Adding the item to the Cart
+12/6/2016, 2:31:03 AM, timcook@apple.com1, addToCart, Adding the item to the Cart
+12/6/2016, 2:31:04 AM, timcook@apple.com1, getCart, Displaying the User Cart
+12/6/2016, 2:31:07 AM, timcook@apple.com1, deleteFromCart, Deleting the item from the Cart
+12/6/2016, 2:31:09 AM, timcook@apple.com1, checkOut, Proceeding with the CheckOut
+12/6/2016, 3:20:44 AM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/6/2016, 3:25:20 AM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/6/2016, 3:25:22 AM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/6/2016, 3:27:22 AM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/6/2016, 3:28:50 AM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/6/2016, 3:28:58 AM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/6/2016, 3:29:01 AM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/6/2016, 3:29:16 AM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/6/2016, 2:23:16 PM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/6/2016, 2:24:08 PM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/6/2016, 2:24:49 PM, shrutiloya1@gmail.com, userProfile, USER PROFILE
+12/6/2016, 2:25:52 PM, shrutiloya1@gmail.com, updateUserProfile, UPDATING PROFILE DETAILS
+12/6/2016, 2:25:52 PM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/6/2016, 2:41:43 PM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/6/2016, 2:55:47 PM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/6/2016, 2:56:04 PM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/6/2016, 2:57:05 PM, shrutiloya1@gmail.com, bid, Making a Bid for the Item
+12/6/2016, 2:58:12 PM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/6/2016, 2:58:14 PM, shrutiloya1@gmail.com, userProfile, USER PROFILE
+12/6/2016, 2:59:20 PM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/6/2016, 2:59:20 PM, shrutiloya1@gmail.com, updateUserProfile, UPDATING PROFILE DETAILS
+12/6/2016, 3:00:26 PM, shrutiloya1@gmail.com, createAD, To Sell any product
+12/6/2016, 3:01:07 PM, shrutiloya1@gmail.com, postAD, Posting the advertisement
+12/6/2016, 3:03:18 PM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/6/2016, 3:03:19 PM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/6/2016, 3:03:20 PM, shrutiloya1@gmail.com, addToCart, Adding the item to the Cart
+12/6/2016, 3:03:22 PM, shrutiloya1@gmail.com, getCart, Displaying the User Cart
+12/6/2016, 3:03:23 PM, shrutiloya1@gmail.com, checkOut, Proceeding with the CheckOut
+12/6/2016, 3:03:52 PM, shrutiloya1@gmail.com, buy, Final payment
+12/6/2016, 3:03:52 PM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/6/2016, 3:04:42 PM, shrutiloya1@gmail.com, myCollection, Getting Details of the Users Own Posts
+12/6/2016, 3:05:24 PM, shrutiloya1@gmail.com, boughtItems, Getting details of the User's Bought items
+12/9/2016, 1:59:13 PM, undefined, home, HOMEPAGE
+12/9/2016, 2:00:41 PM, undefined, home, HOMEPAGE
+12/9/2016, 2:01:23 PM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/10/2016, 1:22:49 AM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/10/2016, 1:22:52 AM, shrutiloya1@gmail.com, userProfile, USER PROFILE
+12/10/2016, 1:24:52 AM, shrutiloya1@gmail.com, userProfile, USER PROFILE
+12/10/2016, 1:25:10 AM, shrutiloya1@gmail.com, userProfile, USER PROFILE
+12/10/2016, 1:25:41 AM, aaa@gmail.com, home, HOMEPAGE
+12/10/2016, 1:25:43 AM, aaa@gmail.com, userProfile, USER PROFILE
+12/10/2016, 1:28:34 AM, aaa@gmail.com, home, HOMEPAGE
+12/10/2016, 7:23:03 PM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/10/2016, 7:23:16 PM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/10/2016, 7:23:20 PM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/10/2016, 7:23:59 PM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/10/2016, 7:24:57 PM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/10/2016, 7:25:21 PM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/10/2016, 7:25:33 PM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/10/2016, 7:25:50 PM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/10/2016, 7:26:02 PM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/10/2016, 7:26:03 PM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/10/2016, 7:28:03 PM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/10/2016, 7:30:03 PM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/10/2016, 8:07:00 PM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/10/2016, 8:07:02 PM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/10/2016, 8:08:09 PM, shrutiloya1@gmail.com, addToCart, Adding the item to the Cart
+12/10/2016, 8:08:12 PM, shrutiloya1@gmail.com, getCart, Displaying the User Cart
+12/10/2016, 8:53:33 PM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/10/2016, 8:53:36 PM, shrutiloya1@gmail.com, userProfile, USER PROFILE
+12/10/2016, 8:53:44 PM, shrutiloya1@gmail.com, createAD, To Sell any product
+12/10/2016, 8:54:05 PM, shrutiloya1@gmail.com, postAD, Posting the advertisement
+12/10/2016, 8:54:47 PM, shrutiloya1@gmail.com, createAD, To Sell any product
+12/10/2016, 8:54:55 PM, shrutiloya1@gmail.com, postAD, Posting the advertisement
+12/10/2016, 9:12:37 PM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/10/2016, 9:12:38 PM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/10/2016, 9:12:44 PM, shrutiloya1@gmail.com, bid, Making a Bid for the Item
+12/10/2016, 9:13:04 PM, shrutiloya1@gmail.com, shop, Opening the Shopping Main Page
+12/10/2016, 12:40:58 PM, shrutiloya1@gmail.com, home, HOMEPAGE
+12/10/2016, 12:41:01 PM, shrutiloya1@gmail.com, myCollection, Getting Details of the Users Own Posts
+12/10/2016, 12:41:12 PM, shrutiloya1@gmail.com, boughtItems, Getting details of the User's Bought items
+

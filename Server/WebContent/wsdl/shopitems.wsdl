@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://test" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://test" xmlns:intf="http://test" xmlns:tns1="http://pojo" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://test" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://pojo"/>
+   <element name="getitems">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getitemsResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getitemsReturn" type="tns1:Items"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://pojo" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="Items">
+    <sequence>
+     <element name="image" nillable="true" type="xsd:string"/>
+     <element name="isBid" nillable="true" type="xsd:string"/>
+     <element name="itemdesc" nillable="true" type="xsd:string"/>
+     <element name="itemname" nillable="true" type="xsd:string"/>
+     <element name="price" nillable="true" type="xsd:string"/>
+     <element name="quantity" nillable="true" type="xsd:string"/>
+     <element name="sellerinfo" nillable="true" type="xsd:string"/>
+     <element name="username" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getitemsResponse">
+
+      <wsdl:part element="impl:getitemsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getitemsRequest">
+
+      <wsdl:part element="impl:getitems" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="shopitems">
+
+      <wsdl:operation name="getitems">
+
+         <wsdl:input message="impl:getitemsRequest" name="getitemsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getitemsResponse" name="getitemsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="shopitemsSoapBinding" type="impl:shopitems">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getitems">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getitemsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getitemsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="shopitemsService">
+
+      <wsdl:port binding="impl:shopitemsSoapBinding" name="shopitems">
+
+         <wsdlsoap:address location="http://localhost:8080/testebay/services/shopitems"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

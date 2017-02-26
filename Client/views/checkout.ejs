@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | E-Bay</title>
+    <link href="css/main.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+    <script src="angularjs/register.js"></script>
+</head>
+
+<body ng-app="register" ng-controller="register">
+<header id="header">
+
+
+    <div class="header-top">
+        <div class="container">
+            <div class="search_box pull-left ">
+                <a><img ng-click="homepage();" src="images/ebay.png" class="pull-left" alt="" width="120" height="100"  /></a>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+</header>
+
+<h1 align="left" style="color: #423e3ecc; padding-left: 60px;"><strong>Checkout</strong></h1>
+
+<section id="do_action">
+    <div class="container">
+             <div class="row">
+            <div class="col-sm-5">
+                <div class="total_area">
+                    <h2 class="title1 text-center">Shipping Details:</h2>
+                         <ul>
+                            <li>Billing Name<span><input type="text" name="name" placeholder="Name"  ng-model="name" width="600"/></span></li>
+                            <li>Street name<span><input type="text" name="street" placeholder="Street name" ng-model="street" /></span></li>
+                            <li>City<span><input type="text" name="city" placeholder="City" ng-model="city" /></span></li>
+                            <li>Zipcode<span><input type="text" name="zipcode" placeholder="Zipcode" ng-model="zipcode" /></span></li>
+                            <li>Country<span><input type="text" name="country" placeholder="Country" ng-model="country" /></span></li>
+                            <input type="checkbox" name="isPrimaryAddress" ng-model="isPrimary" ng-true-value="1" ng-false-value="0"> Save as Primary Address
+                            <button type="submit" class="pull-right signIn col-sm-3 btn btn-primary btn-group-sm" ng-click="addShippingAddress();">ADD</button>
+                            </br></br> <div class="alert alert-success" ng-hide="address_added">
+                                 <strong>The Address added successfully</strong>
+                             </div>
+                        </ul>
+
+
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="total_area">
+                    <h2 class="title1 text-center">Card Details:</h2>
+
+                    <ul>
+                            <li>Total <span>$ <%=finaltotal%></span></li>
+                            <li>Name on the Card<span><input type="text" ng-model="cardname" name="cardname" required/></span></li>
+                            <li>Card Number<span><input type="text" ng-model="cardno" name="cardno" required/></span></li>
+                            <li>Expiration date<span><input type="date" ng-model="expdate" name="expdate" required/></span></li>
+                            <li>Security Code<span><input type="text" ng-model="securitycode" name="securitycode" required/></span></li>
+                        <button type="submit" class="pull-right signIn col-sm-3 btn btn-primary btn-group-sm" ng-click="checkoutAndProceed();">MAKE PAYMENT</button>
+                        </br></br> <div class="alert alert-success" ng-hide="incorrect_card">
+                            <strong>The Card details are incorrect</strong>
+                        </div>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--/#do_action-->
+
+
+
+</body>
+</html>

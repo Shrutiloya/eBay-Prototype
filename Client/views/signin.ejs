@@ -1,0 +1,122 @@
+<html>
+  <head>
+    <title>Login</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	  <script src="angularjs/login.js"></script>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+ 
+ 
+  <body ng-app="login" ng-controller="login">
+
+  <img src="images/ebay.png" class="center-block img-responsive" height="200" width = "180"/>
+
+
+ 
+ <div class="container">
+
+	 <div class="tab-content">
+
+ 		<ul class="nav nav-pills" id="my-tabs">
+  		  <li class="active col-sm-5"><a data-toggle="pill" href="#login">  <span class="glyphicon glyphicon-circle-arrow-right"></span>            LOGIN</a></li>
+  		  <li class="col-sm-5"><a data-toggle="pill" href="#register"><span class="glyphicon glyphicon-plus-sign"></span>               REGISTER</a></li>
+  		</ul></br>
+
+   
+
+           
+    <div id="login" class="panel-body tab-pane fade in active">
+     <form class="form-horizontal" role="form">
+      
+                        <div class="form-group  usernameDiv">
+		                   <div class="col-sm-12">
+		                      <input type="email" class="form-control" name="inputUsername" id="inputUsername" ng-model="username" placeholder="Email Id" required>
+		                  </div>
+		               </div>
+	                  <div class="form-group  usernameDiv">
+	                     <div class="col-sm-12">
+	                      <input type="password" class="form-control" name="inputPassword" id="inputPassword" ng-model="password" placeholder="Password" required>
+	                    </div>
+	                  </div>
+
+
+	                  <div class="form-group ">
+						  <div class="alert alert-danger" ng-hide="invalid_login">
+							  <strong>Incorrect username or password</strong>
+						  </div>
+						  <div class="alert alert-danger" ng-hide="validlogin">
+							  <strong>Welcome User to the portal</strong>
+						  </div>
+	                    <div class="pull-left signIn col-sm-6" >
+	                      <button type="submit" class="btn btn-primary btn-group-justified " ng-click="submit();">Sign in</button>
+	                    </div></br></br>
+						  <div class="pull-left col-sm-7" >
+							  <input type="checkbox">      Stay signed in
+
+						  </div>
+						  <div class="pull-right col-sm-5" >
+							  Forgot your Password?
+
+						  </div>
+
+					  </div>
+
+	                  
+      </form>
+      </div>
+    
+    <div id="register" class="panel-body tab-pane fade">
+    <form class="form-horizontal" role="form">
+
+						<div class="form-group  usernameDiv">
+							<div class="col-sm-12">
+								<input type="email" class="form-control" name="inputUsername" id="inputUsername" ng-model="username" placeholder="Email Id" required>
+							</div>
+						</div>
+						<div class="form-group  usernameDiv">
+							<div class="col-sm-12">
+								<input type="password" class="form-control" name="inputPassword" id="inputPassword" ng-model="password" placeholder="Password" required>
+							</div>
+						</div>
+
+						<div class="form-group  usernameDiv">
+		                   <div class="col-sm-12">
+		                      <input type="text" class="form-control" name="inputFirstname" id="inputFirstname" ng-model="firstname" placeholder="First Name" required>
+		                  </div>
+		               </div>
+	                 	<div class="form-group  usernameDiv">
+		                  <div class="col-sm-12">
+		                      <input type="text" class="form-control" name="inputLastname" id="inputLastname" ng-model="lastname" placeholder="Last Name" required>
+		                  </div>
+		               </div>
+
+
+	                    <div class="pull-left signIn col-sm-6">
+	                      <button type="submit" class="btn btn-primary btn-group-justified" ng-click="register();">Register</button>
+	                    </div>
+	                  </div>
+	            </form>         
+    
+     </div>
+  </div>
+  
+  </div>
+
+
+ </body>
+ 
+</html>

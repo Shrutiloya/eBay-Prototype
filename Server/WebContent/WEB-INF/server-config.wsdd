@@ -1,0 +1,171 @@
+<ns1:deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns1="http://xml.apache.org/axis/wsdd/">
+ <ns1:globalConfiguration>
+  <ns1:parameter name="sendMultiRefs" value="true"/>
+  <ns1:parameter name="disablePrettyXML" value="true"/>
+  <ns1:parameter name="adminPassword" value="admin"/>
+  <ns1:parameter name="attachments.Directory" value="C:\Users\Shruti Loya\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\testebay\WEB-INF\attachments"/>
+  <ns1:parameter name="dotNetSoapEncFix" value="true"/>
+  <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
+  <ns1:parameter name="sendXMLDeclaration" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:requestFlow>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="session"/>
+   </ns1:handler>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="request"/>
+    <ns1:parameter name="extension" value=".jwr"/>
+   </ns1:handler>
+  </ns1:requestFlow>
+ </ns1:globalConfiguration>
+ <ns1:handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <ns1:handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+ <ns1:handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <ns1:service name="userItemTransaction" provider="java:RPC" style="wrapped" use="literal">
+  <ns3:operation name="getMyBoughtItems" qname="ns1:getMyBoughtItems" returnQName="ns1:getMyBoughtItemsReturn" returnType="ns2:Items" soapAction="" xmlns:ns1="http://test" xmlns:ns2="http://pojo" xmlns:ns3="http://xml.apache.org/axis/wsdd/">
+   <ns3:parameter qname="ns1:itemids" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns3:operation>
+  <ns1:operation name="getMyCollection" qname="ns3:getMyCollection" returnQName="ns3:getMyCollectionReturn" returnType="ns4:Items" soapAction="" xmlns:ns3="http://test" xmlns:ns4="http://pojo">
+   <ns1:parameter qname="ns3:username" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="checkout" qname="ns5:checkout" returnQName="ns5:checkoutReturn" returnType="xsd:int" soapAction="" xmlns:ns5="http://test" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns5:username" type="xsd:string"/>
+   <ns1:parameter qname="ns5:productIds" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="getMyBoughtItems getMyCollection checkout"/>
+  <ns1:parameter name="wsdlPortType" value="userItemTransaction"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://test,http://pojo"/>
+  <ns1:parameter name="wsdlServicePort" value="userItemTransaction"/>
+  <ns1:parameter name="className" value="test.userItemTransaction"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://test"/>
+  <ns1:parameter name="wsdlServiceElement" value="userItemTransactionService"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns6:Items" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:pojo.Items" xmlns:ns6="http://pojo"/>
+ </ns1:service>
+ <ns1:service name="shopitems" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="getitems" qname="ns7:getitems" returnQName="ns7:getitemsReturn" returnType="ns8:Items" soapAction="" xmlns:ns7="http://test" xmlns:ns8="http://pojo">
+   <ns1:parameter qname="ns7:username" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="getitems"/>
+  <ns1:parameter name="wsdlPortType" value="shopitems"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://test,http://pojo"/>
+  <ns1:parameter name="wsdlServicePort" value="shopitems"/>
+  <ns1:parameter name="className" value="test.shopitems"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://test"/>
+  <ns1:parameter name="wsdlServiceElement" value="shopitemsService"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns9:Items" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:pojo.Items" xmlns:ns9="http://pojo"/>
+ </ns1:service>
+ <ns1:service name="submitBid" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="submitOffer" qname="ns10:submitOffer" returnQName="ns10:submitOfferReturn" returnType="xsd:int" soapAction="" xmlns:ns10="http://test" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns10:username" type="xsd:string"/>
+   <ns1:parameter qname="ns10:productid" type="xsd:string"/>
+   <ns1:parameter qname="ns10:bidDate" type="xsd:string"/>
+   <ns1:parameter qname="ns10:bidAmount" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="submitOffer"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="submitBid"/>
+  <ns1:parameter name="className" value="test.submitBid"/>
+  <ns1:parameter name="wsdlServicePort" value="submitBid"/>
+  <ns1:parameter name="schemaQualified" value="http://test"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://test"/>
+  <ns1:parameter name="wsdlServiceElement" value="submitBidService"/>
+ </ns1:service>
+ <ns1:service name="AdminService" provider="java:MSG">
+  <ns1:parameter name="allowedMethods" value="AdminService"/>
+  <ns1:parameter name="enableRemoteAdmin" value="false"/>
+  <ns1:parameter name="className" value="org.apache.axis.utils.Admin"/>
+  <ns1:namespace>http://xml.apache.org/axis/wsdd/</ns1:namespace>
+ </ns1:service>
+ <ns1:service name="registerprofile" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="saveprofile" qname="ns11:saveprofile" returnQName="ns11:saveprofileReturn" returnType="xsd:int" soapAction="" xmlns:ns11="http://test" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns11:username" type="xsd:string"/>
+   <ns1:parameter qname="ns11:birthdate" type="xsd:string"/>
+   <ns1:parameter qname="ns11:phoneno" type="xsd:string"/>
+   <ns1:parameter qname="ns11:address" type="xsd:string"/>
+   <ns1:parameter qname="ns11:ebayhandle" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="saveprofile"/>
+  <ns1:parameter name="wsdlPortType" value="registerprofile"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://test"/>
+  <ns1:parameter name="wsdlServicePort" value="registerprofile"/>
+  <ns1:parameter name="className" value="test.registerprofile"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://test"/>
+  <ns1:parameter name="wsdlServiceElement" value="registerprofileService"/>
+ </ns1:service>
+ <ns1:service name="Version" provider="java:RPC">
+  <ns1:parameter name="allowedMethods" value="getVersion"/>
+  <ns1:parameter name="className" value="org.apache.axis.Version"/>
+ </ns1:service>
+ <ns1:service name="savePost" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="savepost" qname="ns12:savepost" returnQName="ns12:savepostReturn" returnType="xsd:int" soapAction="" xmlns:ns12="http://test" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns12:username" type="xsd:string"/>
+   <ns1:parameter qname="ns12:itemname" type="xsd:string"/>
+   <ns1:parameter qname="ns12:itemdesc" type="xsd:string"/>
+   <ns1:parameter qname="ns12:sellerinfo" type="xsd:string"/>
+   <ns1:parameter qname="ns12:price" type="xsd:string"/>
+   <ns1:parameter qname="ns12:quantity" type="xsd:string"/>
+   <ns1:parameter qname="ns12:isBid" type="xsd:string"/>
+   <ns1:parameter qname="ns12:image" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="savepost"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="savePost"/>
+  <ns1:parameter name="className" value="test.savePost"/>
+  <ns1:parameter name="wsdlServicePort" value="savePost"/>
+  <ns1:parameter name="schemaQualified" value="http://test"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://test"/>
+  <ns1:parameter name="wsdlServiceElement" value="savePostService"/>
+ </ns1:service>
+ <ns1:service name="testlogin" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="validate" qname="ns13:validate" returnQName="ns13:validateReturn" returnType="ns14:User" soapAction="" xmlns:ns13="http://test" xmlns:ns14="http://pojo">
+   <ns1:parameter qname="ns13:username" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns13:password" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="validate"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="testlogin"/>
+  <ns1:parameter name="className" value="test.testlogin"/>
+  <ns1:parameter name="wsdlServicePort" value="testlogin"/>
+  <ns1:parameter name="schemaQualified" value="http://test,http://pojo"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://test"/>
+  <ns1:parameter name="wsdlServiceElement" value="testloginService"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns15:User" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:pojo.User" xmlns:ns15="http://pojo"/>
+ </ns1:service>
+ <ns1:service name="testsignup" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="signup" qname="ns16:signup" returnQName="ns16:signupReturn" returnType="xsd:int" soapAction="" xmlns:ns16="http://test" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns16:username" type="xsd:string"/>
+   <ns1:parameter qname="ns16:password" type="xsd:string"/>
+   <ns1:parameter qname="ns16:firstname" type="xsd:string"/>
+   <ns1:parameter qname="ns16:lastname" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="signup"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="testsignup"/>
+  <ns1:parameter name="className" value="test.testsignup"/>
+  <ns1:parameter name="wsdlServicePort" value="testsignup"/>
+  <ns1:parameter name="schemaQualified" value="http://test"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://test"/>
+  <ns1:parameter name="wsdlServiceElement" value="testsignupService"/>
+ </ns1:service>
+ <ns1:transport name="http">
+  <ns1:requestFlow>
+   <ns1:handler type="URLMapper"/>
+   <ns1:handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </ns1:requestFlow>
+  <ns1:parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  <ns1:parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+ </ns1:transport>
+ <ns1:transport name="local">
+  <ns1:responseFlow>
+   <ns1:handler type="LocalResponder"/>
+  </ns1:responseFlow>
+ </ns1:transport>
+</ns1:deployment>

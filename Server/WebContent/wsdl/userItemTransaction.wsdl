@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://test" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://test" xmlns:intf="http://test" xmlns:tns1="http://pojo" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://test" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://pojo"/>
+   <element name="getMyBoughtItems">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="itemids" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMyBoughtItemsResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getMyBoughtItemsReturn" type="tns1:Items"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMyCollection">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMyCollectionResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getMyCollectionReturn" type="tns1:Items"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="checkout">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element maxOccurs="unbounded" name="productIds" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="checkoutResponse">
+    <complexType>
+     <sequence>
+      <element name="checkoutReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://pojo" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="Items">
+    <sequence>
+     <element name="image" nillable="true" type="xsd:string"/>
+     <element name="isBid" nillable="true" type="xsd:string"/>
+     <element name="itemdesc" nillable="true" type="xsd:string"/>
+     <element name="itemname" nillable="true" type="xsd:string"/>
+     <element name="price" nillable="true" type="xsd:string"/>
+     <element name="quantity" nillable="true" type="xsd:string"/>
+     <element name="sellerinfo" nillable="true" type="xsd:string"/>
+     <element name="username" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getMyBoughtItemsResponse">
+
+      <wsdl:part element="impl:getMyBoughtItemsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMyBoughtItemsRequest">
+
+      <wsdl:part element="impl:getMyBoughtItems" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="checkoutResponse">
+
+      <wsdl:part element="impl:checkoutResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMyCollectionRequest">
+
+      <wsdl:part element="impl:getMyCollection" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMyCollectionResponse">
+
+      <wsdl:part element="impl:getMyCollectionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="checkoutRequest">
+
+      <wsdl:part element="impl:checkout" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="userItemTransaction">
+
+      <wsdl:operation name="getMyBoughtItems">
+
+         <wsdl:input message="impl:getMyBoughtItemsRequest" name="getMyBoughtItemsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getMyBoughtItemsResponse" name="getMyBoughtItemsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMyCollection">
+
+         <wsdl:input message="impl:getMyCollectionRequest" name="getMyCollectionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getMyCollectionResponse" name="getMyCollectionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="checkout">
+
+         <wsdl:input message="impl:checkoutRequest" name="checkoutRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:checkoutResponse" name="checkoutResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="userItemTransactionSoapBinding" type="impl:userItemTransaction">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getMyBoughtItems">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getMyBoughtItemsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getMyBoughtItemsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMyCollection">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getMyCollectionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getMyCollectionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="checkout">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="checkoutRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="checkoutResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="userItemTransactionService">
+
+      <wsdl:port binding="impl:userItemTransactionSoapBinding" name="userItemTransaction">
+
+         <wsdlsoap:address location="http://localhost:8080/testebay/services/userItemTransaction"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

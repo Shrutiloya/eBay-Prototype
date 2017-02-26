@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Offer | E-Bay</title>
+    <link href="css/main.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+    <script src="angularjs/register.js"></script>
+</head>
+
+<body ng-app="register" ng-controller="register">
+<header id="header">
+
+
+    <div class="header-top">
+        <div class="container">
+            <div class="search_box pull-left ">
+                <a><img ng-click="homepage();" src="images/ebay.png" class="pull-left" alt="" width="120" height="100"  /></a>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+</header>
+
+<h1 align="left" style="color: #423e3ecc; padding-left: 60px;"><strong>Make Offer</strong></h1>
+
+
+
+<section id="do_action">
+    <div class="container">
+         <div class="row">
+            <div class="col-sm-5">
+                <div class="total_area">
+                    <h2 class="title1 text-center">Bidding Details:</h2>
+                         <ul>
+                             <li>Product Name<span><%=productname%></span></li>
+                             <li>Product ID<span id="Item"><%=productId%></span></li>
+                             <li>Product Original Price<span>$<%=productPrice%></span></li>
+                             <li>Bidding Amount<span><input type="text"  pattern="[0-9]+([\.][0-9]{0,2})?" title="This must be a number with up to 2 decimal places" ng-model="bidAmount" placeholder="Enter the Bidding Amt" required/></span></li>
+                              <a style="text-align: center;" name="makeOffer" class="btn btn-default form-control" ng-click="submitOffer();" >SUBMIT OFFER</a>
+                             </br></br> <div class="alert alert-success" ng-hide="address_added">
+                                 <strong>The BID added successfully</strong>
+                             </div>
+                       </ul>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <a style="text-align: center;" onclick="closeMakeOffer()" class="btn btn-default form-control" >GO BACK</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    function closeMakeOffer() {
+        window.location.assign("/getShopItems");
+    }
+</script>
+
+
+</body>
+</html>

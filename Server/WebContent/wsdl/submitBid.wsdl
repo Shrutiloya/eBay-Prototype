@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://test" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://test" xmlns:intf="http://test" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://test" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="submitOffer">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="productid" type="xsd:string"/>
+      <element name="bidDate" type="xsd:string"/>
+      <element name="bidAmount" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="submitOfferResponse">
+    <complexType>
+     <sequence>
+      <element name="submitOfferReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="submitOfferRequest">
+
+      <wsdl:part element="impl:submitOffer" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="submitOfferResponse">
+
+      <wsdl:part element="impl:submitOfferResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="submitBid">
+
+      <wsdl:operation name="submitOffer">
+
+         <wsdl:input message="impl:submitOfferRequest" name="submitOfferRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:submitOfferResponse" name="submitOfferResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="submitBidSoapBinding" type="impl:submitBid">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="submitOffer">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="submitOfferRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="submitOfferResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="submitBidService">
+
+      <wsdl:port binding="impl:submitBidSoapBinding" name="submitBid">
+
+         <wsdlsoap:address location="http://localhost:8080/testebay/services/submitBid"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

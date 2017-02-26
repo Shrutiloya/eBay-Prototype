@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CART | E-Bay</title>
+      <link href="css/main.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+    <script src="angularjs/register.js"></script>
+</head>
+
+<body ng-app="register" ng-controller="register">
+
+<header id="header">
+    <div class="header_top">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-10">
+                    <div class="shop-menu pull-left">
+
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown"><a>Hi <span class="uspan"><%=username%>! </span>&nbsp;&nbsp;<i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                                <ul role="menu" class="sub-menu">
+                                    <li><img src="images/displaypic.jpg" class="pull-left" alt="" width="50" height="50"  /><a ng-click="profile();">My Profile</a></li>
+                                    <li><a ng-click="getMyColletion();">My Inventory</a></li>
+                                    <li><a ng-click="getMyBoughtItems();">Purchase History</a></li>
+                                    <li ><form action="logout" method="post">
+                                            <input type="submit" value="Logout"  class="btn btn-primary"/>
+                                        </form></li>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a>|&nbsp;&nbsp;&nbsp; Last Logged In: <%=lastLoggedIn%></a></li>
+                            <li ng-click="shopitems();"><a>|&nbsp;&nbsp;&nbsp; Daily Deals</a></li>
+                            <li ng-click="addPost();"><a>|&nbsp;&nbsp;&nbsp; Sell</a></li>
+                            <li><a><img src="images/halloween.jpg" class="pull-left" alt="" width="120" height="25"  /></a></li>
+
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <li class="pull-right" ng-click="getCart();"><a><img src="images/cart.png" alt="" width="30" height="25"  /></a></li>
+                    <li class="pull-right" ng-click="getCart();"><a>Your Cart</a></li>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="mainmenu pull-left">
+                        <table>
+                            <tr>
+                                <td>
+                                    <a><img ng-click="homepage();" src="images/ebay.png" class="pull-left" alt="" width="120" height="100"  /></a>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <input type="text" placeholder="Search..." class="searchtext"/>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <button type="button" ng-click="shopitems();" class="btn btn-primary">Search</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<h1 align="left" style="color: #423e3ecc; padding-left: 60px"><strong>Your eBay Shopping Cart</strong></h1></br></br>
+
+
+<section id="cart_items">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 padding-right">
+          <div class="table-responsive cart_info">
+            <table class="table table-condensed">
+                <thead>
+                <tr class="cart_menu">
+                    <td class="image">Item</td>
+                    <td class="price">Price</td>
+                    <td class="total">Delete</td>
+                </tr>
+                </thead>
+                <tbody>
+                <% for(var i in cartitems)
+                {
+                %>
+                <form action="deleteFromCart" method="post" >
+                    <tr>
+                        <td class="cart_description">
+                            <h4><a><%= cartitems[i].itemname %></a></h4>
+                            <p>Product ID: <%= cartitems[i].itemid %></p>
+                        </td>
+                        <td class="cart_price">
+                            <p>$  <%= cartitems[i].price %></p>
+                        </td>
+                        <input type="text" name="itemid" value="<%=i%>" visibility: hidden />
+                        <td class="cart_price">
+                            <button type="submit" name="deleteItem" class="btn btn-default add-to-cart" >DELETE</button>
+                        </td>
+                    </tr>
+                </form>
+                <%
+                }
+                %>
+                </tbody>
+            </table>
+        </div>
+                </div>
+            <div class="col-sm-4">
+                <div class="total_area">
+                    <ul>
+                        <li><strong>CART SUMMARY:</strong></li>
+                        <li>Cart Sub Total <span>$<%=total%></span></li>
+                        <li>Eco Tax <span>$2</span></li>
+                        <li>Shipping Cost <span>Free</span></li>
+                        <li>Total <span>$<%=finaltotal%></span></li></br>
+                        <button type="submit" ng-click="checkout();" class="btn btn-primary pull-right check_out" >Proceed to Check Out</button>
+
+                    </ul>
+
+                </div>
+            </div></div>
+    </div>
+</section>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Ads | E-BAY</title>
+    <link href="css/main.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+    <script src="angularjs/register.js"></script>
+</head><!--/head-->
+
+<body ng-app="register" ng-controller="register"  background="images/sell.jpg">
+
+<header id="header">
+    <div class="header_top">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-10">
+                    <div class="shop-menu pull-left">
+
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown"><a>Hi <span class="uspan"><%=username%>! </span>&nbsp;&nbsp;<i class="glyphicon glyphicon-triangle-bottom"></i></a>
+                                <ul role="menu" class="sub-menu">
+                                    <li><img src="images/displaypic.jpg" class="pull-left" alt="" width="50" height="50"  /><a ng-click="profile();">My Profile</a></li>
+                                    <li><a ng-click="getMyColletion();">My Inventory</a></li>
+                                    <li><a ng-click="getMyBoughtItems();">Purchase History</a></li>
+                                    <li ><form action="logout" method="post">
+                                            <input type="submit" value="Logout"  class="btn btn-primary"/>
+                                        </form></li>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a>|&nbsp;&nbsp;&nbsp; Last Logged In: <%=lastLoggedIn%></a></li>
+                            <li ng-click="shopitems();"><a>|&nbsp;&nbsp;&nbsp; Daily Deals</a></li>
+                            <li ng-click="addPost();"><a>|&nbsp;&nbsp;&nbsp; Sell</a></li>
+                            <li><a><img src="images/halloween.jpg" class="pull-left" alt="" width="120" height="25"  /></a></li>
+
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <li class="pull-right" ng-click="getCart();"><a><img src="images/cart.png" alt="" width="30" height="25"  /></a></li>
+                    <li class="pull-right" ng-click="getCart();"><a>Your Cart</a></li>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="mainmenu pull-left">
+                        <table>
+                            <tr>
+                                <td>
+                                    <a><img ng-click="homepage();" src="images/ebay.png" class="pull-left" alt="" width="120" height="100"  /></a>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <input type="text" placeholder="Search..." class="searchtext"/>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <button type="button" ng-click="shopitems();" class="btn btn-primary">Search</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<section id="form"><!--form-->
+    <div class="container">
+        <div class="row">
+            <h1 style="color: black; padding-left: 40px"><strong>Over 160 million shoppers want to buy your stuff</strong></h1></br></br>
+
+            <div class="col-sm-8">
+                <div class="signup-form" ><!--sign up form-->
+                     <form action="afterCreatingAD" method="post" class="form-horizontal" role="form" >
+                      <div class="form-group">
+                          <h2 class="col-sm-5 ">What do you want to Sell?</h2>
+                            <div class="col-sm-7">
+                                <input type="text" name="itemname" ng-model="itemname" placeholder="Enter your Item name"  required/>
+                            </div>
+                      </div>
+                        <div class="form-group">
+                            <h2 class="col-sm-5 ">Title</h2>
+                            <div class="col-sm-7">
+                                 <input type="text" name="itemdesc" id="itemdesc" ng-model="itemdesc" placeholder="Enter the Item description" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <h2 class="col-sm-5 ">Seller Information:</h2>
+                            <div class="col-sm-7">
+                                <input type="text" name="sellerinfo" id="sellerinfo" ng-model="sellerinfo" placeholder="Enter the seller info" required/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <h2 class="col-sm-5">Price:</h2>
+                             <div class="col-sm-7">
+                                 <input type="text" name="price" id="price" ng-model="price" placeholder="Enter the Price" required/>
+                             </div>
+                        </div>
+                        <div class="form-group">
+                            <h2 class="col-sm-5">Quantity:</h2>
+
+                            <div class="col-sm-7">
+                                <input type="text" name="quantity" id="quantity" ng-model="quantity" placeholder="Enter the Quantity" required/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <h2 class="col-sm-5 ">Photos:</h2>
+                            <div class="col-sm-7">
+                                <input type="file" name="pic" accept="image/*">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <h2 class="col-sm-5">Available for Bidding:</h2>
+                             <div class="col-sm-1">
+                                <input type="checkbox" name="canBid">
+                            </div>
+                        </div>
+                         <div class="form-group" align="center">
+                         <button type="submit" class="btn btn-primary" ng-click="registerUserProfile();">CREATE AD</button>
+                        </div>
+                    </form>
+                </div><!--/sign up form-->
+
+
+
+            </div>
+        </div>
+    </div>
+</section><!--/form-->
+
+
+
+</body>
+</html>

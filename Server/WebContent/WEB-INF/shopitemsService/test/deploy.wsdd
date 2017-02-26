@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from shopitemsService WSDL service -->
+
+  <service name="shopitems" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://test"/>
+      <parameter name="wsdlServiceElement" value="shopitemsService"/>
+      <parameter name="schemaQualified" value="http://test,http://pojo"/>
+      <parameter name="wsdlServicePort" value="shopitems"/>
+      <parameter name="className" value="test.shopitems"/>
+      <parameter name="wsdlPortType" value="shopitems"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://test" xmlns:retNS="http://test" xmlns:rtns="http://pojo" name="getitems" qname="operNS:getitems" returnQName="retNS:getitemsReturn" returnType="rtns:Items" soapAction="">
+        <parameter xmlns:pns="http://test" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:username" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="getitems"/>
+
+      <typeMapping xmlns:ns="http://pojo" qname="ns:Items" type="java:pojo.Items" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>
